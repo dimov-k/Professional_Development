@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.MainActivity">
+
+    <TextView
+        android:id="@+id/text_time_one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/back"
+        android:text="@string/time_init_text"
+        android:textColor="@color/black"
+        android:textSize="@dimen/time_text_size"
+        app:layout_constraintBottom_toTopOf="@+id/button_start_one"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button_pause_one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:text="@string/button_pause_title"
+        app:layout_constraintEnd_toStartOf="@+id/button_stop_one"
+        app:layout_constraintStart_toEndOf="@+id/button_start_one"
+        app:layout_constraintTop_toBottomOf="@+id/text_time_one" />
+
+    <Button
+        android:id="@+id/button_stop_one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="1dp"
+        android:text="@string/button_stop_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button_pause_one"
+        app:layout_constraintTop_toBottomOf="@+id/text_time_one" />
+
+    <Button
+        android:id="@+id/button_start_one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="209dp"
+        android:layout_marginEnd="15dp"
+        android:text="@string/button_start_title"
+        app:layout_constraintEnd_toStartOf="@+id/button_pause_one"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_time_two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="47dp"
+        android:background="@drawable/back"
+        android:text="@string/time_init_text"
+        android:textColor="@color/black"
+        android:textSize="@dimen/time_text_size"
+        app:layout_constraintBottom_toBottomOf="@+id/button_start_two"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button_pause_two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="59dp"
+        android:layout_marginEnd="15dp"
+        android:text="@string/button_pause_title"
+        app:layout_constraintEnd_toStartOf="@+id/button_stop_two"
+        app:layout_constraintStart_toEndOf="@+id/button_start_two"
+        app:layout_constraintTop_toTopOf="@+id/text_time_two" />
+
+    <Button
+        android:id="@+id/button_start_two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="206dp"
+        android:text="@string/button_start_title"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button_pause_two"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button_stop_two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="59dp"
+        android:layout_marginEnd="1dp"
+        android:text="@string/button_stop_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button_pause_two"
+        app:layout_constraintTop_toTopOf="@+id/text_time_two" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
