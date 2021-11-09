@@ -1,0 +1,87 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion Config.compile_sdk
+    defaultConfig {
+        applicationId Config.application_id
+        minSdkVersion Config.min_sdk
+        targetSdkVersion Config.target_sdk
+        versionCode Releases.version_code
+        versionName Releases.version_name
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility Config.java_version
+        targetCompatibility Config.java_version
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+    //Modules
+    implementation project(Modules.core)
+    implementation project(Modules.model)
+    implementation project(Modules.repository)
+    implementation project(Modules.utils)
+    implementation project(Modules.historyscreen) //Feature
+    implementation project(Modules.descriptionscreen) //Feature
+
+    //Design
+    implementation Design.appcompat
+    implementation Design.multidex
+    implementation Design.material
+    implementation Design.constraintlayout
+    implementation Design.swiperefreshlayout
+
+    //Kotlin
+    implementation Kotlin.core
+    implementation Kotlin.stdlib
+    implementation Kotlin.coroutines_android
+    implementation Kotlin.coroutines_android
+
+    // Retrofit 2
+    implementation Retrofit.retrofit
+    implementation Retrofit.converter_gson
+    implementation Retrofit.adapter_coroutines
+    implementation Retrofit.logging_interceptor
+
+    //Koin for Android
+    //Koin core features
+    implementation Koin.koin_core
+    //Koin main features for Android (Scope,ViewModel ...)
+    implementation Koin.koin_android
+    //Koin Java Compatibility
+    implementation Koin.koin_compat
+
+    //Download images
+    //Picasso
+    implementation Images.picasso
+    //Glide
+    implementation Images.glide
+    kapt Images.glide_compiler
+    //Coil
+    implementation Images.coil
+    //Room
+    implementation Room.room_runtime
+    kapt Room.room_compiler
+    implementation Room.room_ktx
+
+    testImplementation TestImpl.junit
+    androidTestImplementation TestImpl.junit_ext
+    androidTestImplementation TestImpl.espresso
+}
